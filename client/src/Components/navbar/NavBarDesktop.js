@@ -10,11 +10,11 @@ const NavBarDesktop = () => {
         <img src={nike} alt="logo" className="h-[60px] px-4" />
       </div>
       <ul className="hidden md:flex">
-        <li>New & Featured</li>
-        <li>All Products</li>
-        <li>Men</li>
-        <li>Women</li>
-        <li>Kids</li>
+        <li className="p-4">New & Featured</li>
+        <li className="p-4">All Products</li>
+        <li className="p-4">Men</li>
+        <li className="p-4">Women</li>
+        <li className="p-4">Kids</li>
       </ul>
       <div className="hidden md:flex md:flex-row">
         <AiOutlineHeart size={25} className="cursor-pointer" />

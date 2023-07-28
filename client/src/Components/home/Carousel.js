@@ -57,7 +57,7 @@ const Carousels = () => {
   return (
     <div className="px-12 py-16">
       <p className="text-2xl pb-9">Always Iconic</p>
-      <Carousel responsive={responsive}>
+      <Carousel responsive={responsive} >
           {data.map((item, index) => (
             <div>
               <img
