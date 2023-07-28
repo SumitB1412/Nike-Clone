@@ -48,11 +48,11 @@ const NavBarMobile = () => {
             />
           </div>
           <ul>
-            <li className="">New & Featured</li>
-            <li className="">All Products</li>
-            <li className="">Men</li>
-            <li className="">Women</li>
-            <li className="">Kids</li>
+            <li className="p-4">New & Featured</li>
+            <li className="p-4">All Products</li>
+            <li className="p-4">Men</li>
+            <li className="p-4">Women</li>
+            <li className="p-4">Kids</li>
             <div className="flex justify-start gap-4 my-6 ml-5">
               <FaTwitter className="icon"  size={25}/>
               <FaInstagram className="icon" size={25}/>
