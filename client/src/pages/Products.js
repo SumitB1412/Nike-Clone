@@ -1,10 +1,11 @@
 import React from "react";
 import { BsFilterRight } from "react-icons/bs";
 import Dropdown from "../Components/common/Dropdown";
+import ProductsFilter from "../Components/Products/ProductsFilter";
 
 const Products = () => {
   return (
-    <div className="border border-black h-20 mt-10 w-[90%] m-auto sm:top-24 md:top-20">
+    <div className="mt-10 w-[90%] m-auto sm:top-24 md:top-20">
       <div className="border-2 border-red-500 flex justify-between items-center">
         <p className="text-lg md:text-xl lg:text-2xl">Men's Clothing (500)</p>
         <div className="hidden lg:flex justify-between items-center">
@@ -18,6 +19,9 @@ const Products = () => {
             Filters <BsFilterRight />
           </button>
         </div>
+      </div>
+      <div>
+        <ProductsFilter />
       </div>
     </div>
   );

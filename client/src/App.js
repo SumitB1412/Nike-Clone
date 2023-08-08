@@ -13,7 +13,7 @@ const App = () => {
       <NavBar />
       {/* <ProductPage/> */}
       <Products />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };
