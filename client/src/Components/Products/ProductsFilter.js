@@ -8,7 +8,7 @@ import { Checkbox, FormControlLabel, FormGroup } from "@mui/material";
 
 const ProductsFilter = () => {
   return (
-    <div className="w-[25%] mt-6">
+    <div>
       <Accordion>
         <AccordionSummary
           expandIcon={<BsChevronDown />}
