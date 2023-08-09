@@ -61,7 +61,7 @@ const ProductPageDesktop = (props) => {
           </div>
         </div>
         <div className="flex flex-col gap-2 pt-3">
-          <button className="w-96 h-16 text-md bg-black text-white text-center rounded-full hover:bg-black/60">
+          <button className="w-96 h-16 text-md bg-black text-white text-center rounded-full hover:bg-black/70">
             Add to Bag
           </button>
           <button className="w-96 h-16 text-md border-2 border-gray-300  text-center rounded-full hover:border-gray-700">

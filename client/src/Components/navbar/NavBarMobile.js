@@ -19,7 +19,7 @@ const NavBarMobile = () => {
     setLogo(!logo);
   };
   return (
-    <div className="flex w-full justify-between items-center h-[60px] px-1 absolute md:hidden">
+    <div className="flex w-full justify-between items-center h-[60px] px-1 md:hidden">
       <div>
         <img src={nike} alt="logo" className="h-[60px] px-4" />
       </div>
