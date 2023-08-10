@@ -2,52 +2,51 @@ import React from "react";
 
 const CartCard = ({ product }) => {
   return (
-    <div className="flex gap-8">
+    <div className="flex gap-2 sm:gap-8">
       <div>
         <img
           src={product.img[0]}
           alt={product.title}
-          className="h-36 w-36 object-cover"
+          className="h-20 w-20 sm:h-36 sm:w-36 object-cover"
         />
       </div>
       <div className="flex flex-col">
-        <div className="flex">
-          <div>
-            <h4 className="text-lg">{product.title}</h4>
-          </div>
-          <div>
-            <h4 className="text-lg pl-[25vw]">MRP: ₹{product.price}</h4>
-          </div>
+        <div className="flex flex-row justify-between">
+          <div><h4 className="text-base sm:text-lg">{product.title}</h4></div>
+          <div><h4 className="text-base sm:text-lg">MRP: ₹{product.price}</h4></div>
         </div>
         <div>
-          <h4 className="text-base text-gray-400">{product.description}</h4>
+          <h4 className="text-sm sm:text-base text-gray-400">{product.description}</h4>
         </div>
         <div>
-          <h4 className="text-base text-gray-400">{product.color}</h4>
+          <h4 className="text-sm sm:text-base text-gray-400">{product.color}</h4>
         </div>
-        <div className="py-3 flex gap-4">
+        <div className="py-1 sm:py-3 flex gap-2 sm:gap-4">
           <div>
-            <h4 className="text-lg">Quantity: </h4>
+            <h4 className="text-base sm:text-lg">Quantity: </h4>
           </div>
           <div>
-            <button className="border border-black rounded-full px-2">-</button>
+            <button className="text-xs sm:text-base border border-black rounded-full px-1 sm:px-2">-</button>
           </div>
           <div>
-            <h4>0</h4>
+            <h4 className="text-base sm:text-lg pt-[2px]">0</h4>
           </div>
           <div>
-            <button className="border border-black rounded-full px-2">+</button>
+            <button className="text-xs sm:text-base border border-black rounded-full px-1 sm:px-2">+</button>
           </div>
         </div>
         <div className="flex">
           <div>
-            <h4 className="text-base text-gray-400">Favourites</h4>
+            <h4 className="text-sm sm:text-base text-gray-400">Favourites</h4>
           </div>
           <div>
-            <h4 className="text-base text-gray-400 pl-4">Remove</h4>
+            <h4 className="text-sm sm:text-base text-gray-400 pl-4">Remove</h4>
           </div>
         </div>
       </div>
+      {/* <div>
+      <h4 className="text-lg pl-56">MRP: ₹{product.price}</h4>
+      </div> */}
     </div>
   );
 };

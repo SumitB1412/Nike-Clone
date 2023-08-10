@@ -36,8 +36,8 @@ const Cart = () => {
             ],
           },
       ];
-  return <div className="py-10 px-24 flex">
-    <div className="w-[70%]">
+  return <div className="py-10 px-5 flex flex-col lg:px-[7vw] lg:flex-row">
+    <div className="w-full lg:w-[70vw]">
         <h4 className="text-2xl">Bag</h4>
         <div className="flex flex-col py-4 gap-4">
             {product.map(item => (
@@ -49,7 +49,7 @@ const Cart = () => {
             ))}
         </div>
     </div>
-    <div className="w-[30%] pl-10">
+    <div className="w-full lg:w-[30vw] lg:pl-10">
         <h4 className="text-2xl">Summary</h4>
         <div className="flex flex-col font-light">
             <div className="pt-6 pb-1 flex justify-between">
