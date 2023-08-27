@@ -10,7 +10,7 @@ const ProductPageMobile = (props) => {
         },
       };
   return (
-    <div className="flex flex-col lg:hidden pt-32 pb-14 gap-4">
+    <div className="flex flex-col lg:hidden pt-24 pb-14 gap-4">
       <div className="px-8 pb-3">
         <h4 className="text-2xl">{props.product[0].title}</h4>
         <p className="text-gray-600">{props.product[0].description}</p>

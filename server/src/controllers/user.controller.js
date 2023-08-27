@@ -8,20 +8,21 @@ const register = async (req, res) => {
   const existingUser = await UserModel.findOne({ email });
   if (existingUser) {
     res.status(400).json({ msg: "Email already exists" });
-  }
-  bcrypt.hash(password, 8, async (err, hash) => {
-    if (err) {
-      res.status(400).json({ msg: err });
-    } else {
-      try {
-        const user = await UserModel({ ...req.body, password: hash });
-        await user.save();
-        res.status(200).json({ msg: "User registered successfully" });
-      } catch (error) {
-        res.status(400).json({ msg: error });
+  } else {
+    bcrypt.hash(password, 8, async (err, hash) => {
+      if (err) {
+        res.status(400).json({ msg: err });
+      } else {
+        try {
+          const user = await UserModel({ ...req.body, password: hash });
+          await user.save();
+          res.status(200).json({ msg: "User registered successfully" });
+        } catch (error) {
+          res.status(400).json({ msg: error });
+        }
       }
-    }
-  });
+    });
+  }
 };
 
 const login = async (req, res) => {
@@ -33,7 +34,13 @@ const login = async (req, res) => {
         res.status(400).json({ msg: "Wrong password" });
       } else {
         const token = jwt.sign({ userID: existingUser._id }, "secretkey");
-        res.status(200).json({ msg: "Logged in successfully", token });
+        res
+          .status(200)
+          .json({
+            msg: "Logged in successfully",
+            token,
+            userID: existingUser._id,
+          });
       }
     });
   } else {
