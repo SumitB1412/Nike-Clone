@@ -6,7 +6,7 @@ const {
 
 const productRouter = Router();
 
-productRouter.get("/get-product", getProducts);
+productRouter.get("/getAll", getProducts);
 productRouter.post("/add-product", addProducts);
 
 module.exports = productRouter;
