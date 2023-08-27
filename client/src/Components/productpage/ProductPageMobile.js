@@ -12,13 +12,13 @@ const ProductPageMobile = (props) => {
   return (
     <div className="flex flex-col lg:hidden pt-24 pb-14 gap-4">
       <div className="px-8 pb-3">
-        <h4 className="text-2xl">{props.product[0].title}</h4>
-        <p className="text-gray-600">{props.product[0].description}</p>
+        <h4 className="text-2xl">{props.product.title}</h4>
+        <p className="text-gray-600">{props.product.description}</p>
       </div>
       <div>
       <Carousel responsive={responsive}>
-          {props.product[0].img.map((item, index) => (
-            <div>
+          {props.product.img.map((item, index) => (
+            <div key={index}>
               <img
                 src={item}
                 alt={index}
@@ -29,7 +29,7 @@ const ProductPageMobile = (props) => {
       </Carousel>
       </div>
       <div className="px-8">
-        <p className="text-xl">MRP: ₹{props.product[0].price}</p>
+        <p className="text-xl">MRP: ₹{props.product.price}</p>
         <p className="text-md font-light text-gray-400">
           incl. of taxes
           <br />
@@ -40,13 +40,13 @@ const ProductPageMobile = (props) => {
         <p className="text-lg pb-1">Select Size:</p>
         <div className="flex gap-1">
           <button className=" text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
-            {props.product[0].size[0]}
+            {props.product.size[0]}
           </button>
           <button className=" text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
-            {props.product[0].size[1]}
+            {props.product.size[1]}
           </button>
           <button className=" text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-black focus:ring-1 focus:ring-black">
-            {props.product[0].size[2]}
+            {props.product.size[2]}
           </button>
         </div>
       </div>
@@ -63,10 +63,10 @@ const ProductPageMobile = (props) => {
             Product Details:
           </p>
           <ul className="list-disc pl-4 text-sm font-normal">
-            <li>Gender: {props.product[0].gender}</li>
-            <li>Color: {props.product[0].color}</li>
-            <li>Category: {props.product[0].category}</li>
-            <li>Rating: {props.product[0].rating}</li>
+            <li>Gender: {props.product.gender}</li>
+            <li>Color: {props.product.color}</li>
+            <li>Category: {props.product.category}</li>
+            <li>Rating: {props.product.rating}</li>
           </ul>
         </div>
     </div>

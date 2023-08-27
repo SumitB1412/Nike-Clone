@@ -7,11 +7,10 @@ import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import { getAllProducts } from "../Redux/products/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-
 const Products = () => {
   const [filtersHidden, setFiltersHidden] = useState(false);
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
-  const {products} = useSelector((state) => state.productReducer);
+  const { products } = useSelector((state) => state.productReducer);
   const dispatch = useDispatch();
   const toggleDrawer = () => {
     setDrawerIsOpen(!drawerIsOpen);
@@ -19,6 +18,7 @@ const Products = () => {
   const handleFilterShow = () => {
     setFiltersHidden(!filtersHidden);
   };
+
 
   useEffect(() => {
     getAllProducts(dispatch);
@@ -79,7 +79,12 @@ const Products = () => {
         >
           {products &&
             products.map((el, index) => {
-              return <SingleCard data={el} key={index} />;
+              return (
+                <SingleCard
+                  data={el}
+                  key={index}
+                />
+              );
             })}
         </div>
       </div>

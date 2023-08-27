@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 
 const UpperBar = () => {
   const user = useSelector(state => state.authReducer);
-  console.log(user);
   return (
     <div className="h-9 bg-gray-100 flex justify-end py-2 pr-7">
         <div>
