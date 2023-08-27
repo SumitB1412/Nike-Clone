@@ -59,7 +59,7 @@ const Carousels = () => {
       <p className="text-2xl pb-9">Always Iconic</p>
       <Carousel responsive={responsive} >
           {data.map((item, index) => (
-            <div>
+            <div key={index}>
               <img
                 src={item.image}
                 alt="index"
