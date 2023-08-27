@@ -1,7 +1,17 @@
-const initState = { loading: false, error: false, data: [] };
+import { GET_PRODUCTS } from "./actionTypes";
 
-export const homeReducer = (state = initState, { type, payload }) => {
+const initState = { loading: false, error: false, products: [] };
+
+export const productReducer = (state = initState, { type, payload }) => {
   switch (type) {
+    case GET_PRODUCTS: {
+      return {
+        ...state,
+        loading: false,
+        error: false,
+        products: payload,
+      };
+    }
     default:
       return state;
   }

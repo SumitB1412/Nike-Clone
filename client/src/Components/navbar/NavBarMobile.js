@@ -24,7 +24,7 @@ const NavBarMobile = () => {
         <img src={nike} alt="logo" className="h-[60px] px-4" />
       </div>
       <div className="flex flex-row">
-        <AiOutlineHeart size={25} className="cursor-pointer" />
+        <AiOutlineHeart size={25} className="cursor-pointer" /> 
         <BiShoppingBag size={25} className="cursor-pointer mx-5" />
         <div onClick={handleHamBurger} className="md:hidden">
           {hamBurger ? (
