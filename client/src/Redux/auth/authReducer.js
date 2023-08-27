@@ -1,13 +1,26 @@
+import { USER_LOGIN, USER_REGISTER } from "./actionTypes";
+
 const initState = {
   isLogin: false,
-  isReset: false,
   token: "",
-  user: "",
+  user:""
 };
 
 export const authReducer = (state = initState, { type, payload }) => {
   switch (type) {
-    default:
+    case USER_REGISTER:
+      return{
+        ...state,
+      }
+    case USER_LOGIN:
+      return{
+        ...state,
+        isLogin: true,
+        token: payload.token,
+        user: payload.userID
+
+      }
+    default: 
       return state;
   }
 };
