@@ -33,7 +33,13 @@ const login = async (req, res) => {
         res.status(400).json({ msg: "Wrong password" });
       } else {
         const token = jwt.sign({ userID: existingUser._id }, "secretkey");
-        res.status(200).json({ msg: "Logged in successfully", token });
+        res
+          .status(200)
+          .json({
+            msg: "Logged in successfully",
+            token,
+            userID: existingUser._id,
+          });
       }
     });
   } else {
