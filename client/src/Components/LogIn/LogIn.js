@@ -1,50 +1,63 @@
-import React from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import React, { useState } from "react";
+import {useDispatch} from "react-redux";
+import {useNavigate} from "react-router-dom";
+import { getLoginSuccess } from "../../Redux/auth/actions";
+import { isLogInFormEmpty } from "../../utils/formValidator";
 
-const LogIn = (props) => {
-  if (!props.isVisible) return null;
-  const handleClose = (e) => {
-    if (e.target.id === "outerpart") props.clickHandler();
+const LogIn = () => {
+  const initState = {
+    email: "",
+    password: "",
   };
+  const [form, setForm] = useState(initState);
+
+  const handleInputChange = ({ target: { name, value } }) => {
+    setForm({ ...form, [name]: value });
+  };
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault();
+
+    const isEmpty = isLogInFormEmpty(form);
+    if(!isEmpty.status){
+      return alert(isEmpty.message);
+    }
+    dispatch(getLoginSuccess(form,navigate));
+  }
   return (
-    <div
-      className="fixed inset-0 bg-black bg-opacity-30 backdrop-blur-md flex justify-center items-center text-black"
-      id="outerpart"
-      onClick={handleClose}
-    >
-      <div className="w-[100%] sm:w-[448px] bg-white flex flex-col rounded-lg px-14 py-14">
-        <button className="text-black place-self-end -mt-10 mb-4 -mr-10">
-          <AiOutlineClose
-            size={25}
-            className="cursor-pointer text-black border border-gray-200 rounded-lg shadow-sm hover:border-gray-500"
-            onClick={props.clickHandler}
-          />
-        </button>
+      <div className="w-full flex flex-col px-4 py-14">
         <div className="flex flex-col justify-center text-center">
           <p className="text-xl font-semibold ">YOUR ACCOUNT FOR</p>
           <p className="text-xl font-semibold ">EVERYTHING NIKE</p>
         </div>
-        <div className="py-4">
+        <div className="pt-8 pb-4 flex justify-center">
           <input
             type="email"
+            name="email"
+            onChange={handleInputChange}
             placeholder="Email Address"
-            className="w-[90%] sm:w-[338px] h-[38px] text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+            className="w-full sm:w-[338px] h-[38px] text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
           />
         </div>
-        <div>
+        <div className="flex justify-center">
           <input
-            type="text"
+            type="password"
+            name="password"
+            onChange={handleInputChange}
             placeholder="Password"
-            className="w-[90%] sm:w-[338px] h-[38px] text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+            className="w-full sm:w-[338px] h-[38px] text-black border border-gray-300 py-2 px-4 rounded-lg shadow-sm hover:border-gray-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
           />
         </div>
-        <div className="flex place-content-end pt-4">
+        <div className="flex place-content-center pt-4">
           <p className="text-md text-gray-400 font-normal">
             Forgot your Password?
           </p>
         </div>
-        <div className="py-4">
-          <button className="w-[90%] sm:w-[338px] h-[38px] bg-black text-white border border-gray-300 py-2 px-3 rounded-lg shadow-sm hover:border-gray-500">
+        <div className="py-4 flex justify-center">
+          <button onClick={handleOnSubmit} className="w-full sm:w-[338px] h-[38px] bg-black text-white border border-gray-300 py-2 px-3 rounded-lg shadow-sm hover:border-gray-500">
             SIGN IN
           </button>
         </div>
@@ -54,7 +67,6 @@ const LogIn = (props) => {
           </p>
         </div>
       </div>
-    </div>
   );
 };
 
