@@ -10,8 +10,8 @@ const CartCard = ({ product }) => {
           className="h-20 w-20 sm:h-36 sm:w-36 object-cover"
         />
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-row justify-between">
+      <div className="flex flex-col w-full">
+        <div className="w-full flex justify-between">
           <div><h4 className="text-base sm:text-lg">{product.title}</h4></div>
           <div><h4 className="text-base sm:text-lg">MRP: ₹{product.price}</h4></div>
         </div>
