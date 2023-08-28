@@ -7,6 +7,7 @@ import {FiLogOut} from "react-icons/fi";
 
 
 const UpperBar = () => {
+
   const user = useSelector((state) => state.authReducer);
   const [open, setOpen] = useState(false);
   const toggle = () => {
