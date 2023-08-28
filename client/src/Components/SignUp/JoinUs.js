@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
 import { emailValidator, isSignUpFormEmpty, passwordValidator } from "../../utils/formValidator";
 import { getRegisterSuccess } from "../../Redux/auth/actions";
 
