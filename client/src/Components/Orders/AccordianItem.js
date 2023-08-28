@@ -19,7 +19,7 @@ const AccordianItem = ({ orderList }) => {
               Order on {orderList.orderDate}
             </h4>
           </div>
-          <div>{open ? <MdKeyboardArrowUp className="pt-1"/> : <MdKeyboardArrowDown className="pt-1"/>}</div>
+          <div>{open ? <MdKeyboardArrowUp size={20} /> : <MdKeyboardArrowDown size={20} />}</div>
         </div>
       </div>
       <Collapse isOpened={open}>
