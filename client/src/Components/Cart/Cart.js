@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 import CartCard from "./CartCard";
 
 const Cart = () => {
@@ -36,7 +37,7 @@ const Cart = () => {
             ],
           },
       ];
-  return <div className="py-10 px-5 flex flex-col lg:px-[7vw] lg:flex-row">
+  return <div className="py-10 px-4 flex flex-col md:px-12 lg:px-24 lg:flex-row">
     <div className="w-full lg:w-[70vw]">
         <h4 className="text-2xl">Bag</h4>
         <div className="flex flex-col py-4 gap-4">
@@ -75,7 +76,7 @@ const Cart = () => {
             </div>
             <div className="border border-gray-200"></div>  
             <div className="pt-7">
-                <button className="w-full h-12 rounded-full bg-black text-white  hover:bg-black/70">Member Checkout</button>
+            <Link to={'/checkout'}><button className="w-full h-12 rounded-full bg-black text-white  hover:bg-black/70">Member Checkout</button></Link>
             </div>
         </div>
     </div>

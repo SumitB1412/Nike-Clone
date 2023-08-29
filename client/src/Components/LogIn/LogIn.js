@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 import { getLoginSuccess } from "../../Redux/auth/actions";
 import { isLogInFormEmpty } from "../../utils/formValidator";
 
@@ -63,7 +63,7 @@ const LogIn = () => {
         </div>
         <div className="flex justify-center">
           <p className="text-md text-gray-400 font-normal">
-            Not a Member?SignUp
+            Not a Member?<Link to={'/register'} className="underline hover:text-gray-600">SignUp</Link>
           </p>
         </div>
       </div>

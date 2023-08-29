@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CartCard = ({ product }) => {
   return (
     <div className="flex gap-2 sm:gap-8">
-      <div>
+      <Link to={'/products/description/:id'}><div>
         <img
           src={product.img[0]}
           alt={product.title}
           className="h-20 w-20 sm:h-36 sm:w-36 object-cover"
         />
-      </div>
+      </div></Link>
       <div className="flex flex-col w-full">
         <div className="w-full flex justify-between">
           <div><h4 className="text-base sm:text-lg">{product.title}</h4></div>

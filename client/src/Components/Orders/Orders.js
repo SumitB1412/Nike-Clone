@@ -160,7 +160,7 @@ const Orders = () => {
     },
   ];
   return (
-    <div className="py-10 px-4 lg:px-24 flex flex-col">
+    <div className="py-10 px-4 md:px-12 lg:px-24 flex flex-col">
       <div>
         <h4 className="text-2xl pb-4">
           Orders<span className="text-base pl-2">[{orderList.length}]</span>
