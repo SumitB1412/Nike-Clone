@@ -11,6 +11,19 @@ const getProducts = async (req, res) => {
   }
 };
 
+const getSingleProduct = async (req, res) => {
+  try {
+    const product = await ProductModel.findOne({ _id: req.params.id });
+    if (product) {
+      res.status(200).json({ product });
+    } else {
+      res.status(400).json({ err: "Product not found" });
+    }
+  } catch (error) {
+    res.status(400).json({ error: error });
+  }
+};
+
 const addProducts = async (req, res) => {
   try {
     const product = await ProductModel(req.body);
@@ -21,4 +34,4 @@ const addProducts = async (req, res) => {
   }
 };
 
-module.exports = { getProducts, addProducts };
+module.exports = { getProducts, addProducts,getSingleProduct };
