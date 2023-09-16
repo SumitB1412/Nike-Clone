@@ -10,7 +10,7 @@ const ProductPageDesktop = (props) => {
               <img
                 src={el}
                 alt={props.product.title}
-                className="w-80 h-96 object-cover"
+                className="w-full object-cover"
               />
             </div>
           );
