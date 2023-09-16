@@ -1,8 +1,9 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 const CheckOut = () => {
   return (
-    <div className="py-10 px-4 md:px-16 lg:px-24 lg:flex">
+    <div className="py-10 px-4 md:px-12 lg:px-24 lg:flex">
       <div className="w-full lg:w-[70%] flex flex-col">
         <div>
           <h4 className="text-2xl pb-4">Enter your name and address:</h4>
@@ -113,9 +114,9 @@ const CheckOut = () => {
           </div>
           <div className="border border-gray-200"></div>
           <div className="pt-7">
-            <button className="w-full h-12 rounded-full bg-black text-white  hover:bg-black/70">
-              Member Checkout
-            </button>
+          <Link to={'/orders'}><button className="w-full h-12 rounded-full bg-black text-white  hover:bg-black/70">
+              Place Order
+            </button></Link>
           </div>
         </div>
       </div>

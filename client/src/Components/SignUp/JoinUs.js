@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {useDispatch} from "react-redux";
-import {useNavigate} from "react-router-dom";
+import {Link,useNavigate} from "react-router-dom";
 import { emailValidator, isSignUpFormEmpty, passwordValidator } from "../../utils/formValidator";
 import { getRegisterSuccess } from "../../Redux/auth/actions";
 
@@ -111,7 +111,7 @@ const JoinUs = () => {
         </div>
         <div className="flex justify-center pt-2">
           <p className="text-md text-gray-400 font-normal">
-            Already a Member?Login
+            Already a Member?<Link to={'/login'}  className="underline hover:text-gray-600">Login</Link>
           </p>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import men from './men.webp';
 import women from './women.webp';
 import kids from './kid.webp';
@@ -10,15 +11,15 @@ const Bottom = () => {
         <div className='flex flex-col sm:flex-row gap-3'>
             <div className='relative'>
                 <img src={men} alt="men" className='h-[550px] object-cover'/>
-                <button className='absolute bg-white hover:bg-gray-200 text-black rounded-full py-2 px-5 top-[462px] left-[50px]'>Men's</button>
+                <button className='absolute bg-white hover:bg-gray-200 text-black rounded-full py-2 px-5 top-[462px] left-[50px]'><Link to={'/products'}>Men's</Link></button>
             </div>
             <div className='relative'>
                 <img src={women} alt="men" className='h-[550px] object-cover'/>
-                <button className='absolute bg-white hover:bg-gray-200 text-black rounded-full py-2 px-5 top-[462px] left-[50px]'>Women's</button>
+                <button className='absolute bg-white hover:bg-gray-200 text-black rounded-full py-2 px-5 top-[462px] left-[50px]'><Link to={'/products'}>Women's</Link></button>
             </div>
             <div className='relative'>
                 <img src={kids} alt="men" className='h-[550px] object-cover'/>
-                <button className='absolute bg-white hover:bg-gray-200 text-black rounded-full py-2 px-5 top-[462px] left-[50px]'>Kid's</button>
+                <button className='absolute bg-white hover:bg-gray-200 text-black rounded-full py-2 px-5 top-[462px] left-[50px]'><Link to={'/products'}>Kid's</Link></button>
             </div>
         </div>
     </div>

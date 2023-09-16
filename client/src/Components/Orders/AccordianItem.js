@@ -23,8 +23,8 @@ const AccordianItem = ({ orderList }) => {
         </div>
       </div>
       <Collapse isOpened={open}>
-        <div className="px-4 py-5 w-full flex justify-between gap-20">
-          <div className="flex flex-col w-[30%]">
+        <div className="px-4 py-5 w-full flex flex-col gap-4 md:flex-row justify-between gap-20">
+          <div className="flex flex-col w-full md:w-[30%]">
             <h4 className="text-lg font-semibold">Ordered Items</h4>
             <div className="border border-gray-200"></div>
             <div className="w-full py-3">
@@ -42,7 +42,7 @@ const AccordianItem = ({ orderList }) => {
               ))}
             </div>
           </div>
-          <div className="flex flex-col w-[30%]">
+          <div className="flex flex-col w-full md:w-[30%]">
             <h4 className="text-lg font-semibold">Shipping Address</h4>
             <div className="border border-gray-200"></div>
             <div className="w-full flex flex-col py-5 gap-2">
@@ -84,7 +84,7 @@ const AccordianItem = ({ orderList }) => {
             </div>
             <div className="border border-gray-200"></div>
           </div>
-          <div className="flex flex-col w-[30%]">
+          <div className="flex flex-col w-full md:w-[30%]">
             <h4 className="text-lg font-semibold">Summary</h4>
             <div className="border border-gray-200"></div>
             <div className="w-full flex flex-col py-5 gap-2">

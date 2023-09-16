@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {Link} from 'react-router-dom';
 import product1 from "./product1.webp";
 import product2 from "./product2.webp";
 import product3 from "./product3.webp";
@@ -59,7 +60,7 @@ const Carousels = () => {
       <p className="text-2xl pb-9">Always Iconic</p>
       <Carousel responsive={responsive} >
           {data.map((item, index) => (
-            <div key={index}>
+            <Link to={'/products/description/:id'}><div key={index}>
               <img
                 src={item.image}
                 alt="index"
@@ -67,6 +68,7 @@ const Carousels = () => {
               />
               <p className="text-sm text-gray-500 pt-2">{item.name}</p>
             </div>
+            </Link>
           ))}
       </Carousel>
     </div>

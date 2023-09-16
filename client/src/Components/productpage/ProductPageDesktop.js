@@ -2,7 +2,7 @@ import React from "react";
 
 const ProductPageDesktop = (props) => {
   return (
-    <div className="hidden lg:flex flex-row pl-12 py-16">
+    <div className="hidden lg:flex flex-row pl-12 py-10">
       <div className="hidden lg:grid grid-cols-2 gap-2">
         {props.product.img.map((el, index) => {
           return (
