@@ -10,6 +10,7 @@ import {
   FaTwitter,
   FaYoutube,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const NavBarMobile = () => {
   const [hamBurger, setHamBurger] = useState(false);
@@ -21,7 +22,7 @@ const NavBarMobile = () => {
   return (
     <div className="flex w-full justify-between items-center h-[60px] px-1 md:hidden">
       <div>
-        <img src={nike} alt="logo" className="h-[60px] px-4" />
+      <Link to={'/'}><img src={nike} alt="logo" className="h-[60px] px-4" /></Link>
       </div>
       <div className="flex flex-row">
         <AiOutlineHeart size={25} className="cursor-pointer" /> 

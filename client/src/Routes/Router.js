@@ -10,6 +10,7 @@ import Orders from "../Components/Orders/Orders";
 import JoinUs from "../Components/SignUp/JoinUs";
 import LogIn from "../Components/LogIn/LogIn";
 import Products from "../pages/Products";
+import Favourites from "../Components/Favourites/Favourites";
 
 const Router = () => {
   return (
@@ -25,6 +26,7 @@ const Router = () => {
         <Route path="/orders" element={<Orders />} />
         <Route path="/register" element={<JoinUs />} />
         <Route path="/login" element={<LogIn />} />
+        <Route path="/favourites" element={<Favourites />} />
       </Routes>
       <Footer />
     </>
