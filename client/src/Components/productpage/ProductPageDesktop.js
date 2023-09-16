@@ -1,6 +1,10 @@
 import React from "react";
+import { addToCart } from "../../Redux/cart/actions";
 
 const ProductPageDesktop = (props) => {
+  const handleAddToCart = () => {
+    addToCart(props.product);
+  };
   return (
     <div className="hidden lg:flex flex-row pl-12 py-10">
       <div className="hidden lg:grid grid-cols-2 gap-2">
@@ -44,7 +48,10 @@ const ProductPageDesktop = (props) => {
           </div>
         </div>
         <div className="flex flex-col gap-2 pt-3">
-          <button className="w-96 h-16 text-md bg-black text-white text-center rounded-full hover:bg-black/70">
+          <button
+            className="w-96 h-16 text-md bg-black text-white text-center rounded-full hover:bg-black/70"
+            onClick={handleAddToCart}
+          >
             Add to Bag
           </button>
           <button className="w-96 h-16 text-md border-2 border-gray-300  text-center rounded-full hover:border-gray-700">
