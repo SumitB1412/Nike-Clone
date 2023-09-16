@@ -34,7 +34,7 @@ const updateCart = async (req, res) => {
 
 const deleteFromCart = async (req, res) => {
   try {
-    const cartData = await CartModel.findByIdAndDelete({ _id: reqq.body._id });
+    const cartData = await CartModel.findByIdAndDelete({ _id: req.body._id });
     res.status(200).json({ msg: "Cart updated successfully" });
   } catch (error) {
     res.status(400).json({ error });
