@@ -6,27 +6,27 @@ const reqArray = { type: Array, required: true };
 
 const orderSchema = new Schema(
   {
-    orderSummary: {
-      subTotal: reqNumber,
-      quantity: reqNumber,
-      shipping: reqNumber,
-      discount: reqNumber,
-      total: reqNumber,
-    },
-    cartProducts: [
-      {
-        title: reqString,
-        gender: reqString,
-        description: reqString,
-        category: reqString,
-        price: reqNumber,
-        size: reqString,
-        color: reqString,
-        rating: reqNumber,
-        img: reqArray,
-        quantity: reqNumber,
-      },
-    ],
+    // orderSummary: {
+    //   subTotal: reqNumber,
+    //   quantity: reqNumber,
+    //   shipping: reqNumber,
+    //   discount: reqNumber,
+    //   total: reqNumber,
+    // },
+    // products: [
+    //   {
+    //     title: reqString,
+    //     gender: reqString,
+    //     description: reqString,
+    //     category: reqString,
+    //     price: reqNumber,
+    //     size: reqString,
+    //     color: reqString,
+    //     rating: reqNumber,
+    //     img: reqArray,
+    //     quantity: reqNumber,
+    //   },
+    // ],
     shippingDetails: {
       firstName: reqString,
       lastName: reqString,

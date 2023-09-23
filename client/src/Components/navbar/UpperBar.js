@@ -43,7 +43,7 @@ const UpperBar = () => {
         >
           <div className="pl-4 pr-24 py-2 w-full flex flex-col gap-4">
           <Link to={'/favourites'}><div className="w-full flex text-sm"><AiOutlineHeart size={20} className="pr-2"/><p className="pl-2">Wishlist</p></div></Link>
-          <Link to={'/orders'}><div className="w-full flex text-sm"><BsCartCheckFill size={20} className="pr-2"/><p className="pl-2">Orders</p></div></Link>
+          <Link to={'/order'}><div className="w-full flex text-sm"><BsCartCheckFill size={20} className="pr-2"/><p className="pl-2">Orders</p></div></Link>
           <Link to={'/cart'}><div className="w-full flex text-sm"><BsCart size={20} className="pr-2"/><p className="pl-2">Cart</p></div></Link>
           <Link to={'/'}><div className="w-full flex text-sm"><FiLogOut size={20} className="pr-2"/><p className="pl-2">Logout</p></div></Link>
           </div>

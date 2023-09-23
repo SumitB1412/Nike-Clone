@@ -329,8 +329,7 @@ const Favourites = () => {
   color: "Pearl Pink/Barely Rose/Sesame",
   rating: 4.8,
   img:["https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/6b1b78f7-6cb1-4733-969c-4f1a7278bc4d/offcourt-adjust-slides-0lvVgp.png","https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/7a6a272f-1884-4f64-87cc-cfb1f15c8cf3/offcourt-adjust-slides-0lvVgp.png","https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/969858e0-e69b-4590-aad6-09ac746c6b0e/offcourt-adjust-slides-0lvVgp.png","https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/21ce5c87-7a7b-401c-b1f7-c5b127a8d55e/offcourt-adjust-slides-0lvVgp.png"],
-},
-  
+}
   ]
   return (
     <div className='px-4 md:px-12 lg:px-24 py-10 flex flex-col'>

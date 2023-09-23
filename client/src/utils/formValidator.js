@@ -43,3 +43,27 @@ export const isLogInFormEmpty = ({email, password}) => {
         return({status:true});
     }
 }
+
+export const isCheckOutFormEmpty = ({firstName , lastName, email, mobile, addressLine1, addressLine2, locality, pinCode, state, country}) => {
+    if(!firstName || !lastName || !email || !mobile || !addressLine1 || !locality || !pinCode || !state || !country){
+        return({status:false,message:"Please fill all the details!"});
+    } else {
+        return({status:true});
+    }
+}
+
+export const mobileValidator = (mobile) =>{
+    if(mobile < 1000000000 || mobile>9999999999){
+        return({status:false,message:"Please enter a valid Mobile Number!"})
+    }else{
+        return({status:true});
+    }
+}
+
+export const pinCodeValidator = (pinCode) =>{
+    if(pinCode < 100000 || pinCode>999999){
+        return({status:false,message:"Please enter a valid Pin Code!"})
+    }else{
+        return({status:true});
+    }
+}
