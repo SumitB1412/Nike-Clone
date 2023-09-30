@@ -13,15 +13,15 @@ const SingleCard = ({ data }) => {
   };
   return (
     <div onClick={() => handleSingleProduct(data._id)}>
-      <img src={data.img[0]} alt="product" className="" />
+      <img src={data.img[0]} alt="product" className="w-full object-cover" />
       <div className="flex justify-between items-center mt-2">
-        <p className="font-medium">{data.title}</p>
+        <p className="text-base font-medium max-w-[20ch] truncate">{data.title}</p>
         <p className="flex items-center">
           <AiOutlineStar /> {data.rating}
         </p>
       </div>
-      <p className="text-[gray] text-sm">{data.description}</p>
-      <p className="text-[gray] text-sm">{data.size.join(", ")}</p>
+      <p className="text-gray-400 max-w-[23ch] truncate text-base">{data.description}</p>
+      <p className="text-gray-400 max-w-[23ch] truncate text-base">{data.size.join(", ")}</p>
       <p className="font-medium">₹ {data.price}</p>
     </div>
   );

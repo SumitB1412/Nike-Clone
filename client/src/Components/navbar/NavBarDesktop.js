@@ -6,7 +6,6 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { BiShoppingBag } from "react-icons/bi";
 
 const NavBarDesktop = () => {
-  const navigate = useNavigate();
   return (
     <div className="hidden md:flex w-full justify-between items-center h-16 px-1">
       <div>
