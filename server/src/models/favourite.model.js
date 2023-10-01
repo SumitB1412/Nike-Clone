@@ -26,6 +26,6 @@ const favouriteSchema = new Schema(
   }
 );
 
-const FavouriteModel = model("product", favouriteSchema);
+const FavouriteModel = model("favourite", favouriteSchema);
 
 module.exports = FavouriteModel;
