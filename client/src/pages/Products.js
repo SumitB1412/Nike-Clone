@@ -23,7 +23,6 @@ const Products = () => {
   useEffect(() => {
     getAllProducts(dispatch);
   }, []);
-
   return (
     <div className="mt-10 w-[90%] m-auto sm:top-24 md:top-20">
       <div className="flex justify-between items-center">

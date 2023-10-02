@@ -1,51 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import CartCard from "./CartCard";
+import {useDispatch, useSelector} from "react-redux";
+import { getCartItems } from "../../Redux/cart/actions";
+import { subTotal, productCount } from "../../utils/summaryCalculator";
 
 const Cart = () => {
-  const product = [
-    {
-      title: "Air Jordan 1 Low OG",
-      gender: "Men",
-      description: "Shoes",
-      category: "Shoes",
-      price: 12795.0,
-      size: [5, 6, 8, 9],
-      color: "Black/Tech Grey/White",
-      rating: 4.8,
-      img: [
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/a0d9c64e-7c77-483f-8668-fa2d3e546fda/air-jordan-1-low-og-shoes-29tsx7.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/63274add-44d5-4639-a6ea-2b6700e4478f/air-jordan-1-low-og-shoes-29tsx7.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/47730f1f-bc6e-4c5f-bb4e-5fb60dcdaca7/air-jordan-1-low-og-shoes-29tsx7.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/0330236a-e4b2-42d0-8b5e-dbd1dddf44d0/air-jordan-1-low-og-shoes-29tsx7.png",
-      ],
-    },
-    {
-      title: "Nike Invicible 3",
-      gender: "Female",
-      description: "Best Ever Running Shoes",
-      category: "Shoes",
-      price: "3695.00",
-      size: ["Small", "Medium", "Large"],
-      color: "Black",
-      rating: "4.4",
-      img: [
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/3396ee3c-08cc-4ada-baa9-655af12e3120/invincible-3-road-running-shoes-Wwmmlp.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/00afad82-be65-49db-a1c9-1f2b3c3c079f/invincible-3-road-running-shoes-Wwmmlp.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/ee344bd7-5a64-423c-9c85-3a6dce10a68f/invincible-3-road-running-shoes-Wwmmlp.png",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/132be235-f9f5-4e45-91fe-d93d5590ffe4/invincible-3-road-running-shoes-Wwmmlp.png",
-      ],
-    },
-  ];
+  const product = useSelector((state) => state.cartReducer.cart);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    getCartItems(dispatch);
+  },[product]);
+  const subValue = subTotal(product);
+  const numberOfProducts = productCount(product);
   return (
     <div className="py-10 px-4 flex flex-col md:px-12 lg:px-24 lg:flex-row">
       <div className="w-full lg:w-[70vw]">
         <h4 className="text-2xl">Bag</h4>
         <div className="flex flex-col py-4 gap-4">
-          {product.map((item) => (
+          {product.map((item,index) => (
             <>
-              <CartCard product={item} />
-              <div className="border border-gray-200"></div>
+              <CartCard product={item} key={index}/>
             </>
           ))}
         </div>
@@ -55,24 +30,24 @@ const Cart = () => {
         <div className="flex flex-col font-light">
           <div className="pt-6 pb-1 flex justify-between">
             <div>Subtotal</div>
-            <div>₹3695.00</div>
+            <div>₹{subValue}</div>
           </div>
           <div className="py-1 flex justify-between">
             <div>Quantity</div>
-            <div>4</div>
+            <div>{numberOfProducts}</div>
           </div>
           <div className="py-1 flex justify-between">
             <div>Delivery Charges</div>
-            <div>₹100.00</div>
+            <div>₹100</div>
           </div>
           <div className="py-1 pb-3 flex justify-between">
             <div>Discount</div>
-            <div>₹0.0</div>
+            <div>₹0</div>
           </div>
           <div className="border border-gray-200"></div>
           <div className="py-4 flex justify-between">
             <div>Total</div>
-            <div>₹3695.00</div>
+            <div>₹{(subValue+100)}</div>
           </div>
           <div className="border border-gray-200"></div>
           <div className="pt-7">

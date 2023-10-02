@@ -1,7 +1,7 @@
 const CartModel = require("../models/cart.model");
 
 const getCartData = async (req, res) => {
-  const { userID } = req.body;
+  const { userID } = req.query;
   try {
     const cartData = await CartModel.find({ user: userID });
     res.status(200).json({ data: cartData });
@@ -33,8 +33,9 @@ const updateCart = async (req, res) => {
 };
 
 const deleteFromCart = async (req, res) => {
+  const {productID} = req.query;
   try {
-    const cartData = await CartModel.findByIdAndDelete({ _id: req.body._id });
+    const cartData = await CartModel.findByIdAndDelete({ _id: productID });
     res.status(200).json({ msg: "Cart updated successfully" });
   } catch (error) {
     res.status(400).json({ error });

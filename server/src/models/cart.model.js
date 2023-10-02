@@ -14,7 +14,7 @@ const cartSchema = Schema({
   color: reqString,
   rating: reqNumber,
   img: reqArray,
-  // quantity: reqNumber,
+  quantity: reqNumber,
   user: {
     type: Schema.Types.ObjectId,
     ref: "user",

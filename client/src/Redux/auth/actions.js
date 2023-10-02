@@ -18,6 +18,7 @@ export const getLoginSuccess = (data, navigate) => async (dispatch) => {
     res = res.data;
     setItem("token",res.token)
     setItem("userID",res.userID)
+    setItem("user",res.userName);
     dispatch({ type: USER_LOGIN, payload: res });
     navigate("/");
   } catch (error) {

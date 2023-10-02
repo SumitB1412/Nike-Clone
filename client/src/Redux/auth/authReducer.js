@@ -1,6 +1,7 @@
 import { USER_LOGIN, USER_REGISTER } from "./actionTypes";
 
 const initState = {
+  userName:"",
   isLogin: false,
   token: "",
   user:""
@@ -17,8 +18,8 @@ export const authReducer = (state = initState, { type, payload }) => {
         ...state,
         isLogin: true,
         token: payload.token,
-        user: payload.userID
-
+        user: payload.userID,
+        userName: payload.userName
       }
     default: 
       return state;
