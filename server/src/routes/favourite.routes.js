@@ -1,10 +1,9 @@
 const { Router } = require("express");
-const FavouriteModel = require("../models/favourite.model");
 const {
   getFav,
   addToFav,
   removeFav,
-} = require("../controllers/favourite.vontroller");
+} = require("../controllers/favourite.controller");
 
 const favouriteRouter = Router();
 

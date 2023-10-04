@@ -1,14 +1,21 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { addFavourites } from "../../Redux/favourites/actions";
+import { useDispatch } from "react-redux";
 
 const ProductPageMobile = (props) => {
-    const responsive = {
-        mobile: {
-          breakpoint: { max: 2000, min: 0 },
-          items: 1,
-        },
-      };
+  const dispatch = useDispatch();
+  const responsive = {
+    mobile: {
+      breakpoint: { max: 2000, min: 0 },
+      items: 1,
+    },
+  };
+  const handleAddToFavourites = (e) => {
+    e.preventDefault();
+    addFavourites(dispatch, props.product);
+  };
   return (
     <div className="flex flex-col lg:hidden pt-24 pb-14 gap-4">
       <div className="px-8 pb-3">
@@ -16,17 +23,13 @@ const ProductPageMobile = (props) => {
         <p className="text-gray-600">{props.product.description}</p>
       </div>
       <div>
-      <Carousel responsive={responsive}>
+        <Carousel responsive={responsive}>
           {props.product.img.map((item, index) => (
             <div key={index}>
-              <img
-                src={item}
-                alt={index}
-                className="w-full"
-              />
+              <img src={item} alt={index} className="w-full" />
             </div>
           ))}
-      </Carousel>
+        </Carousel>
       </div>
       <div className="px-8">
         <p className="text-xl">MRP: ₹{props.product.price}</p>
@@ -54,21 +57,22 @@ const ProductPageMobile = (props) => {
         <button className="w-[100%] h-16 text-md bg-black text-white text-center rounded-full hover:bg-black/60">
           Add to Bag
         </button>
-        <button className="w-[100%] h-16 text-md border-2 border-gray-300  text-center rounded-full hover:border-gray-700">
+        <button
+          onClick={handleAddToFavourites}
+          className="w-[100%] h-16 text-md border-2 border-gray-300  text-center rounded-full hover:border-gray-700"
+        >
           Favourite ♡
         </button>
       </div>
       <div className="pt-4 px-8">
-          <p className="text-base underline font-medium pb-2">
-            Product Details:
-          </p>
-          <ul className="list-disc pl-4 text-sm font-normal">
-            <li>Gender: {props.product.gender}</li>
-            <li>Color: {props.product.color}</li>
-            <li>Category: {props.product.category}</li>
-            <li>Rating: {props.product.rating}</li>
-          </ul>
-        </div>
+        <p className="text-base underline font-medium pb-2">Product Details:</p>
+        <ul className="list-disc pl-4 text-sm font-normal">
+          <li>Gender: {props.product.gender}</li>
+          <li>Color: {props.product.color}</li>
+          <li>Category: {props.product.category}</li>
+          <li>Rating: {props.product.rating}</li>
+        </ul>
+      </div>
     </div>
   );
 };

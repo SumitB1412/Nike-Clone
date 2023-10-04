@@ -1,11 +1,16 @@
 import React from "react";
-import {useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../../Redux/cart/actions";
+import { addFavourites } from "../../Redux/favourites/actions";
 
 const ProductPageDesktop = (props) => {
   const dispatch = useDispatch();
   const handleAddToCart = (e) => {
     addToCart(dispatch,props.product);
+  };
+  const handleAddToFavourites = (e) => {
+    e.preventDefault();
+    addFavourites(dispatch, props.product);
   };
   return (
     <div className="hidden lg:flex flex-row pl-12 py-10">
@@ -56,7 +61,10 @@ const ProductPageDesktop = (props) => {
           >
             Add to Bag
           </button>
-          <button className="w-96 h-16 text-md border-2 border-gray-300  text-center rounded-full hover:border-gray-700">
+          <button
+            onClick={handleAddToFavourites}
+            className="w-96 h-16 text-md border-2 border-gray-300  text-center rounded-full hover:border-gray-700"
+          >
             Favourite ♡
           </button>
         </div>
