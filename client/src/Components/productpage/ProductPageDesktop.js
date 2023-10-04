@@ -6,8 +6,7 @@ import { addFavourites } from "../../Redux/favourites/actions";
 const ProductPageDesktop = (props) => {
   const dispatch = useDispatch();
   const handleAddToCart = (e) => {
-    e.preventDefault();
-    dispatch(addToCart(props.product));
+    addToCart(dispatch,props.product);
   };
   const handleAddToFavourites = (e) => {
     e.preventDefault();

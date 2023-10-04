@@ -28,3 +28,4 @@ export const removeFromFavourites = async (dispatch, productID) => {
   console.log(res.data);
   getFavourites(dispatch);
 };
+
