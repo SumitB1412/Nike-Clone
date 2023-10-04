@@ -5,8 +5,7 @@ import { addToCart } from "../../Redux/cart/actions";
 const ProductPageDesktop = (props) => {
   const dispatch = useDispatch();
   const handleAddToCart = (e) => {
-    e.preventDefault();
-    dispatch(addToCart(props.product));
+    addToCart(dispatch,props.product);
   };
   return (
     <div className="hidden lg:flex flex-row pl-12 py-10">
