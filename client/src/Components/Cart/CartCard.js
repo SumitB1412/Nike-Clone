@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteCartItem, updateCartItem } from "../../Redux/cart/actions";
+import { addFavourites } from "../../Redux/favourites/actions";
 
 const CartCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -14,6 +15,10 @@ const CartCard = ({ product }) => {
     } else {
       alert("You can add upto 10 same products!");
     }
+  };
+  const handleAddToFavourites = (e) => {
+    e.preventDefault();
+    addFavourites(dispatch, product);
   };
   const handleDecrement = () => {
     setCount(count - 1);
@@ -82,7 +87,7 @@ const CartCard = ({ product }) => {
             </div>
           </div>
           <div className="flex">
-            <div>
+            <div onClick={handleAddToFavourites} className="cursor-pointer">
               <h4 className="text-sm sm:text-base text-gray-400">Favourites</h4>
             </div>
             <div
